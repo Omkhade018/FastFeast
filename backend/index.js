@@ -8,20 +8,28 @@ mongoDB();
 
 // Middleware
 app.use(express.json());
+const allowedOrigins = [
+  "https://fast-feast-topaz.vercel.app",
+  "https://fast-feast-6wxi9g6m6-khadeom238-4493s-projects.vercel.app"
+];
 
 app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://fast-feast-topaz.vercel.app"
-  );
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
-  res.setHeader(
-  "Access-Control-Allow-Methods",
-  "GET, POST, PUT, DELETE, OPTIONS"
-);
+
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+
   next();
 });
 // Routes
