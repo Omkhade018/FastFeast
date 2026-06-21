@@ -9,13 +9,17 @@ export default function Home() {
   const [foodItem, setFoodItem] = useState([]);
 
   const loadData = async ()=>{
-    let response = await fetch("http://localhost:4000/api/foodData",{
-      method:"POST",
-      headers:{
-        'Content-Type':'application/json'
+   let response = await fetch(
+  "https://fastfeast-backend.onrender.com/api/foodData",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }
+);
 
-      }
-    });
+response = await response.json();
 
     response = await response.json()
 
