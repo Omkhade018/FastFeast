@@ -62,9 +62,9 @@ export default function Navbar() {
                   Login
                 </Link>
 
-                <Link className="btn bg-white text-danger mx-1" to="/creatuser">
-                  SignUp
-                </Link>
+               <Link className="btn bg-white text-danger mx-1" to="/signup">
+  SignUp
+</Link>
               </div>
 
               :

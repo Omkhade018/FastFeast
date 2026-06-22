@@ -61,7 +61,7 @@ const randomImages = [...images].sort(() => 0.5 - Math.random()).slice(0, 3);
    <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{objectFit:"cover !important"}}>
   <div className="carousel-inner"  id='carousal'>
     <div className="carousel-caption"  style={{zIndex:"10"}}>
-    <div className="d-flex" justify-content-centre>
+    <div className="d-flex" justify-content-center>
    <div className="carousel-caption hero-content">
   <h1 className="hero-title">
   Fast Delivery 
